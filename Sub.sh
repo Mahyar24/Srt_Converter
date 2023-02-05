@@ -10,7 +10,7 @@ function convert() {
     sub_name="${1%%\.srt}";
 
     case "${file_type}" in
-        "Non-ISO extended-ASCII text, with CRLF line terminators" | "Non-ISO extended-ASCII text, with CRLF, NEL line terminators")
+        "Non-ISO extended-ASCII text, with CRLF line terminators" | "Non-ISO extended-ASCII text, with CRLF, NEL line terminators" | "Non-ISO extended-ASCII text, with CRLF, CR line terminators")
             iconv -f WINDOWS-1256 -t UTF-8 "${1}" -o "${sub_name}_FIXED.srt";
             rm "${1}";;
         "Little-endian UTF-16 Unicode text, with CRLF, CR line terminators")
